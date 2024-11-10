@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="css/index.css" />
+	</head>
+	<body>
+		<!-- 整体大盒子 -->
+		<div class="box">
+			<!-- 左侧菜单区域 -->
+			<div class="left">
+				<!-- 姓名区域 -->
+				<div class="name">
+					<div class="head"></div>
+					<div class="text">张雅俊</div>
+				</div>
+				<!-- 菜单 -->
+				<ul>
+					<!-- 一级标题 -->
+					<li>
+						<p id="menu-message">信息管理<span class="on">⌜</span></p>
+						<!-- 二级标题 -->
+						<ul class="list1">
+							<li data-id="1" class="active">学生信息管理</li>
+							<li data-id="2">班级信息管理</li>
+							<li data-id="3">宿舍信息管理</li>
+						</ul>
+					</li>
+					<li>事务管理<span class="upon">⌞</span></li>
+					<li>个人设置</li>
+				</ul>
+			</div>
+			<!-- 右侧详细信息 -->
+			<div class="right">
+				<!-- 头部导航区 -->
+				<div class="header">
+					<div class="title">学生信息管理系统</div>
+					<button class="message">站内信<span>3</span></button>
+					<button class="exit">退出</button>
+					<!-- 提示信息 -->
+					<div class="message-list">
+						<ul>
+							<li>张三&nbsp;&nbsp;&nbsp;<span>2021-05-11 10：25：30</span></li>
+							<li>张三丰<span>2021-05-06 14：55：38</span></li>
+							<li>李思文<span>2021-05-01 08：00：18</span></li>
+						</ul>
+					</div>
+					<!-- 小三角 -->
+					<div class="triangle"></div>
+				</div>
+				<!-- 学生信息管理 -->
+				<div class="content">
+					<!-- 嵌入其他页面 -->
+					<iframe src="list.html" frameborder="0" width="900px" height="740px" style="border: none;background-color: #f8f8f8;"></iframe>
+				</div>
+			</div>
+		</div>
+		<script src="js/index.js"></script>
+	</body>
+</html>

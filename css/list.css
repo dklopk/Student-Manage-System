@@ -1,0 +1,251 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	width: 900px;
+}
+.box{
+	width: 100%;
+	position: relative;
+}
+/* 搜索栏布局 */
+.search{
+	display: flex;
+	height: 60px;
+	background-color: #55ffff;
+}
+/* 输入框 */
+.search input{
+	height: 26px;
+	width: 160px;
+	margin-top: 16px;
+	margin-left: 30px;
+	border: none;
+	border-radius: 6px;
+}
+/* 按钮 */
+#search,#add,#delete,#modify{
+	font-family: '楷体';
+	width: 60px;
+	height: 26px;
+	margin-top: 16px;
+	border: none;
+	border-radius: 6px;
+	font-size: 16px;
+	font-weight: 500;
+}
+/* 搜索按钮 */
+#search{
+	background-color: #00f500;
+	margin-left: 10px;
+}
+/* 新增按钮 */
+#add{
+	background-color: #00f500;
+	margin-left: 400px;
+}
+/* 删除按钮 */
+#delete{
+	background-color: #ff557f;
+	color: #fff;
+	margin-left: 8px;
+}
+/* 修改按钮 */
+#modify{
+	background-color: #ffff00;
+	margin-left: 8px;
+}
+/* 取消按钮 */
+#cancle,#cancle_modify{
+	position: absolute;
+	right: 250px;
+	top: 16px;
+	font-family: '楷体';
+	width: 70px;
+	height: 26px;
+	background-color: #ff55ff;
+	color: #fff;
+	border: none;
+	border-radius: 6px;
+	font-size: 16px;
+	font-weight: 500;
+	display: none;
+}
+
+/* 人物名片整体布局 */
+.picture{
+	width: 100%;
+	background-color: #f8f8f8;
+	display: flex;
+	flex-wrap: wrap;
+	align-content: start;
+}
+/* 男女卡片颜色分开 */
+.picture div{
+	width: 170px;
+	margin-left: 40px;
+	margin-top: 20px;
+	border-radius: 8px;
+	background-color: #ffccdd;
+	box-shadow: 3px 3px 6px 3px rgba(0, 0, 0, 0.2);
+}
+.picture div:nth-child(2n+1){
+	background-color: #ffccdd;
+}
+.picture div:nth-child(2n){
+	background-color: #aaccff;
+}
+/* 人物图片 */
+.picture div img{
+	margin: 10px;
+	width: 150px;
+	height: 160px;
+	border: 2px solid #fff;
+	margin-bottom: 0;
+}
+/* 下方文字 */
+.picture div p{
+	margin: 4px;
+	margin-left: 12px;
+	font-size: 15px;
+}
+.picture div p:nth-child(4){
+	font-size: 12px;
+	color: #454545;
+}
+.picture div p:nth-child(5){
+	margin-bottom: 10px;
+}
+.picture div .name{
+	margin-right: 60px;
+	font-weight: 600;
+}
+/* 爱好标签 */
+.picture div p:nth-last-child(1) span{
+	display: inline-block;
+	width: 38px;
+	height: 18px;
+	margin-right: 3px;
+	border-radius: 6px;
+	color: #fff;
+	font-size: 14px;
+	font-family: '楷体';
+	text-align: center;
+}
+.picture div:nth-child(2n+1) p:nth-last-child(1) span{
+	background-color: #ffaa00;
+}
+.picture div:nth-child(2n) p:nth-last-child(1) span{
+	background-color: #4488ff;
+}
+/* 鼠标悬浮效果 */
+.picture div:hover{
+	transition: all 0.3s;
+	transform: scale(1.06);
+}
+
+/* 黑色遮罩 */
+#mask{
+	position: fixed;         /* 固定位置，随滚动保持覆盖 */
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);  /* 半透明黑色 */
+	z-index: 100;           /* 确保遮罩层位于其他元素上方 */
+	display: none;           /* 默认隐藏 */
+}
+
+/* 添加信息表单 */
+.form{
+	position: absolute;
+	top: 50px;
+	left: 200px;
+	font-family: "楷体";
+	font-size: 24px;
+	height: 88%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	display: none;
+	z-index: 101;
+}
+form{
+	display: flex;
+	flex-direction: column;
+	border: 2px solid #ffaa00;
+	box-shadow: 6px 6px 6px rgba(255, 170, 0, 0.6);
+	border-radius: 14px;
+	background-color: #ffff7f;
+	padding: 26px;
+}
+h2 span{
+	display: inline-block;
+	margin-right: 30px;
+	margin-left: 30px;
+	font-size: 40px;
+	transform: rotate(45deg);
+}
+h2{
+	font-size: 46px;
+	font-weight: 500;
+	color: #ffaa00;
+	text-align: center;
+	font-family: "隶书";
+	padding-bottom: 20px;
+}
+form>div{
+	display: flex;
+	padding-bottom: 12px;
+}
+form>div>label:nth-child(1){
+	display: inline-block;
+	width: 120px;
+	text-align: right;
+}
+form>div:nth-last-child(1) input{
+	width: 120px;
+	margin-left: 84px;
+	font-family: "楷体";
+	background-color: #ffaaff;
+	color: #0000ff;
+	border-radius: 6px;
+}
+.sex>input{
+	margin-left: 40px;
+	margin-right: 16px;
+}
+.hobby>input{
+	margin-left: 24px;
+	margin-right: 10px;
+}
+/* 控件背景 */
+.bg{
+	background-color: #eaff2a;
+	border: 1px solid #ff9345;
+	border-radius: 6px;
+	width: 340px;
+}
+/* 下拉菜单 */
+select option{
+	font-size: 18px;
+	font-weight: 300;
+}
+/* 年龄区的range进度条 */
+#rangeValue{
+	display: inline-block;
+	font-family: "华文行楷";
+	margin-left: 16px;
+	padding-top: 2px;
+}
+form button{
+	width: 28px;
+	height: 28px;
+	background-color: #ffaa00;
+	color: #ffffff;
+	border-radius: 14px;
+	position: relative;
+	left: 468px;
+	margin-top: -36px;
+}

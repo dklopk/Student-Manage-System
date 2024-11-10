@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" href="css/list.css" />
+	</head>
+	<body>
+		<div class="box">
+			<!-- 搜索区 -->
+			<div class="search">
+				<input type="text" name="" id="">
+				<button id="search">搜索</button>
+				<button id="add">新增</button>
+				<button id="delete">删除</button>
+				<button id="modify">修改</button>
+			</div>
+			<!-- 点击删除或修改后出现的按钮 -->
+			<button id="cancle">取消删除</button>
+			<button id="cancle_modify">取消修改</button>
+			<!-- 信息区 -->
+			<div class="picture">
+				<div>
+					<img src="img/lyt.webp" alt="" />
+					<p>182056101</p>
+					<p><span class="name">李一桐</span><span class="sex">女</span></p>
+					<p>软件工程</p>
+					<p><span>读书</span><span>篮球</span></p>
+				</div>
+				<div>
+					<img src="img/lisi.jpg" alt="" />
+					<p>182056102</p>
+					<p><span class="name">李斯</span><span class="sex">男</span></p>
+					<p>计算机科学与技术</p>
+					<p><span>读书</span><span>音乐</span><span>学习</span></p>
+				</div>
+				<div>
+					<img src="img/wangwu.webp" alt="" />
+					<p>182056103</p>
+					<p><span class="name">王武</span><span class="sex">女</span></p>
+					<p>软件工程</p>
+					<p><span>读书</span><span>网球</span><span>音乐</span></p>
+				</div>
+				<div>
+					<img src="img/zhaoliu.webp" alt="" />
+					<p>182056104</p>
+					<p><span class="name">赵柳</span><span class="sex">男</span></p>
+					<p>数字媒体技术</p>
+					<p><span>读书</span><span>学习</span><span>音乐</span></p>
+				</div>
+			</div>
+			<!-- 遮罩层 -->
+			<div id="mask"></div>
+			<!-- 添加学生信息表单 -->
+			<div class="form">
+				<form autocomplete="off" method="get" name="myForm" target="_blank">
+					<!-- 关闭表单按钮 -->
+					<button id="button">X</button>
+					<h2><span>🌟</span>学生信息<span>🌟</span></h2>
+					<div>
+						<label>姓名：</label>
+						<input class="bg" type="text" name="username" value="" placeholder="请输入你的姓名" id="name"/>
+					</div>
+					<div>
+						<label>性别：</label>
+						<div class="sex">
+							<input type="radio" name="sex" id="nan" value="男" checked/><label for="nan">男</label>
+							<input type="radio" name="sex" id="nv" value="女"/><label for="nv">女</label>
+						</div>
+					</div>
+					<div>
+						<label>学号：</label>
+						<input class="bg" type="text" name="text" id="stuNum" />
+					</div>
+					<div>
+						<label>年龄：</label>
+						<!-- 年龄区的range进度条 -->
+						<input type="range" id="rangeInput" name="age" min="0" max="50" value="20" step="1" />
+						<span id="rangeValue">20</span>
+					</div>
+					<!-- 年龄区的range进度条拖动后，后面显示的数字随进度条的拖动而变化的js -->
+					<script>
+						const rangeInput = document.getElementById("rangeInput")
+						const rangeValue = document.getElementById("rangeValue")
+						rangeInput.addEventListener('input',function(){
+							rangeValue.textContent = rangeInput.value
+						})
+					</script>
+					<div>
+						<label>所属省份：</label>
+						<input class="bg" list="province_list" name="province" value="" placeholder="请输入或选择你的省份"/>
+						<!-- 点击所属省份的input框之后弹出的选择项list,也可手动输入省份 -->
+						<datalist id="province_list">
+							<option value="山西"></option>
+							<option value="陕西"></option>
+							<option value="北京"></option>
+							<option value="河南"></option>
+							<option value="上海"></option>
+						</datalist>
+					</div>
+					<div>
+						<label>兴趣爱好：</label>
+						<div class="hobby">
+							<input type="checkbox" name="hobby" value="网球" id="tennis" checked/><label for="tennis">网球</label>
+							<input type="checkbox" name="hobby" value="学习" id="study"/><label for="study">学习</label>
+							<input type="checkbox" name="hobby" value="篮球" id="basketball"/><label for="basketball">篮球</label>
+							<br>
+							<input type="checkbox" name="hobby" value="跑步" id="run"/><label for="run">跑步</label>
+							<input type="checkbox" name="hobby" value="读书" id="read"/><label for="read">阅读</label>
+							<input type="checkbox" name="hobby" value="音乐" id="music"/><label for="music">音乐</label>
+						</div>
+					</div>
+					<div>
+						<label>所属系部：</label>
+						<!-- 所属系部的下拉表单 -->
+						<select class="bg" name="系部" id="xibu">
+							<option value="软件工程">软件工程</option>
+							<option value="计算机科学与技术">计算机科学与技术</option>
+							<option value="数字媒体技术">数字媒体技术</option>
+						</select>
+					</div>
+					<div>
+						<label>照片：</label>
+						<input class="bg" type="file" id="fileInput" accept="image/*">
+						<!-- <input class="bg" type="url" name="url" placeholder="请输入你的图片地址" /> -->
+					</div>
+					<div>
+						<label>邮箱：</label>
+						<input class="bg" type="email" name="email" value="" placeholder="请输入你的邮箱"/>
+					</div>
+					<div>
+						<label>个人简介：</label>
+						<textarea class="bg" name="self-profile" id="" cols="30" rows="6"></textarea>
+					</div>
+					<div>
+						<input type="submit" value="确认提交" id="submit">
+						<input type="reset" value="重置信息">
+					</div>
+				</form>
+			</div>
+			<script src="js/list.js"></script>
+		</div>
+	</body>
+</html>

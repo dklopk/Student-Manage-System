@@ -1,0 +1,206 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+/* 页面整体背景 */
+html{
+	background-color: #ebefff;
+}
+/* 整体大盒子 */
+.box{
+	width: 1100px;
+	display: flex;
+	height: 800px;
+	margin: 0 auto;
+}
+/* 左边栏 */
+.left{
+	width: 200px;
+	height: 100%;
+	background-color: #44529c;
+	color: #fff;
+	font-size: 18px;
+	border: 1px solid #44529c;
+}
+/* 右边栏 */
+.right{
+	width: 900px;
+	height: 100%;
+}
+/* 个人信息部分 */
+.left .name{
+	height: 60px;
+	display: flex;
+	border-bottom: 1px solid #d2d2d2;
+}
+/* 头像 */
+.left .name .head{
+	margin-left: 30px;
+	margin-top: 10px;
+	height: 40px;
+	width: 40px;
+	border-radius: 50%;
+	background: url(../img/head.jpg) no-repeat center / cover;
+}
+/* 姓名 */
+.left .name .text{
+	text-align: center;
+	color: #0000fa;
+	width: 60px;
+	height: 30px;
+	margin-left: 10px;
+	margin-top: 15px;
+	border-radius: 10px;
+	background-color: #00f5f5;
+	box-shadow: 0 0 15px 8px rgba(0, 255, 255, 0.9);
+}
+/* 左侧整体背景 */
+.left>ul{
+	background-color: #5a6aba;
+}
+.left ul{
+	list-style: none;
+	/* display: flex;
+	flex-direction: column; */
+}
+/* 一级标题 */
+.left>ul>li{
+	height: 32px;
+	padding-left: 16px;
+	border-bottom: 2px solid #44529c;
+}
+/* 二级标题 */
+.left>ul>li:nth-child(1){
+	cursor: pointer;
+	height: 136px;
+}
+.left>ul>li:nth-child(1)>p{
+	border-bottom: 2px solid #44529c;
+}
+.left .list1 li{
+	font-size: 16px;
+	text-indent: 10px;
+	height: 32px;
+	margin-left: 10px;
+	border-bottom: 2px solid #44529c;
+}
+/* 鼠标悬浮时显示 */
+.left .list1 li:hover{
+	background-color: #003cb4;
+	cursor: pointer;
+}
+.left>ul>li:nth-child(n+2):hover{
+	background-color: #003cb4;
+	cursor: pointer;
+}
+/* 当前选择项 */
+.left .list1 li.active{
+	background-color: #fff;
+	color: #0000fa;
+}
+.left .list1 li:nth-last-child(1){
+	border-bottom: none;
+}
+/* 向上箭头 */
+.left ul .on{
+	display: inline-block;
+	margin-left: 60px;
+	padding-left: 16px;
+	transform: rotate(45deg);
+	font-size: 24px;
+}
+/* 向下箭头 */
+.left ul .upon{
+	display: inline-block;
+	margin-left: 60px;
+	padding-left: 16px;
+	transform: rotate(-45deg);
+	font-size: 24px;
+}
+
+
+/* 右侧头部整体 */
+.right .header{
+	height: 60px;
+	background-color: #e7e7e7;
+	display: flex;
+	position: relative;
+}
+/* 标题 */
+.right .header .title{
+	font-family: '楷体';
+	flex: 1;
+	padding-top: 16px;
+	padding-left: 30px;
+	font-size: 28px;
+	color: #00aaff;
+	font-weight: 900;
+}
+/* 站内信按钮 */
+.right .header .message{
+	border-radius: 18px;
+	margin-top: 12px;
+	width: 90px;
+	height: 36px;
+	font-weight: 600;
+	border: 1px solid #9d9d9d;
+	cursor: pointer;
+}
+/* 数字标注显示 */
+.right .header .message span{
+	display: inline-block;
+	margin-left: 6px;
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	background-color: #00aaff;
+	color: #fff;
+}
+/* 退出按钮 */
+.right .header .exit{
+	margin-right: 70px;
+	margin-left: 30px;
+	border-radius: 18px;
+	margin-top: 12px;
+	width: 50px;
+	height: 36px;
+	font-weight: 600;
+	border: 1px solid #9d9d9d;
+	cursor: pointer;
+}
+/* 提示信息整体 */
+.right .header .message-list{
+	position: absolute;
+	right: 250px;
+	top: 14px;
+	border-radius: 6px;
+	background-color: rgba(0, 85, 255, 0.4);
+	z-index: 99;
+	display: none;
+}
+.right .header .message-list ul{
+	list-style: none;
+	margin: 6px;
+}
+/* 提示信息内部 */
+.right .header .message-list ul li{
+	font-size: 13px;
+	height: 20px;
+	border-bottom: 1px solid #00aaff;
+}
+/* 名字和日期之间 */
+.right .header .message-list ul li span{
+	margin-left: 26px;
+}
+/* 提示信息右侧小三角 */
+.right .header .triangle{
+	display: none;
+	position: absolute;
+	right: 244px;
+	top: 24px;
+	width: 0;
+	height: 0;
+	border-top: 12px solid rgba(0, 85, 255, 0.3);
+	border-left: 12px solid transparent;
+	transform: rotate(45deg);
+}
